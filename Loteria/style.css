@@ -1,0 +1,28 @@
+.numberPainel,
+#sortedNumbersView {
+    width: 660px;
+    margin: 35px auto;
+    display: block;
+}
+
+.numberPainel>input,
+#sortedNumbersView p {
+    height: 80px;
+    width: 80px;
+    margin: 15px;
+    border: 1px solid #999;
+    color: #999;
+    border-radius: 100%;
+    float: left;
+    text-align: center;
+    font-size: 30px;
+    line-height: 79px;
+}
+
+.btn-primary {
+    display: block;
+    width: 250px;
+    font-size: 25px;
+    color: #fff;
+    margin: 0 auto;
+}
