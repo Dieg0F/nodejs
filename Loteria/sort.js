@@ -1,6 +1,5 @@
-const fs = require('fs');
-const userFile = '/userNumbers.txt';
-const sortedFile = '/sortedNumbers.txt';
+const userFile = 'userNumbers.txt';
+const sortedFile = 'sortedNumbers.txt';
 
 var sort = new Array();
 var user = new Array();
@@ -53,7 +52,7 @@ function compareResult() {
     });
 }
 
-function readFile() {
+function readFile() {    
     user = []
     fs.open(userFile, 'r', (err, fl) => {
         if (err) throw err;
@@ -61,7 +60,7 @@ function readFile() {
             if (err) throw err;
             var linhas = data.split(/\r?\n/);
             linhas.forEach(function (linha) {
-                user.push(parseInt(linha))
+                console.log(linha)
             })
         })
     });

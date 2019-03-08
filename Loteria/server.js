@@ -14,10 +14,10 @@ var server = http.createServer(function (request, response) {
         case '/style.css':
             openStyleFile(response);
             break;
-        case '/userNumbers.js':
+        case userFile:
             openUserNumbers(response);
             break;
-        case '/sortedNumbers.js':
+        case sortedFile:
             openSortedNumbers(response);
             break;
         default:
@@ -53,17 +53,17 @@ function openHomePage(response) {
 }
 
 function openSortedNumbers(response) {
-    fs.readFile(sortedFile, function (err, html) {
-        response.writeHeader(200, { 'Content-Type': 'text/html; charset=UTF-8;' });
-        response.write(html);
+    fs.readFile(sortedFile, function (err, text) {
+        response.writeHeader(200, { 'Content-Type': 'text/json; charset=UTF-8;' });
+        response.write(text);
         response.end();
     });
 }
 
 function openUserNumbers(response) {
-    fs.readFile(userFile, function (err, html) {
-        response.writeHeader(200, { 'Content-Type': 'text/html; charset=UTF-8;' });
-        response.write(html);
+    fs.readFile(userFile, function (err, text) {
+        response.writeHeader(200);
+        response.write(text);
         response.end();
     });
 }
